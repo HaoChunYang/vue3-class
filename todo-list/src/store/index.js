@@ -1,5 +1,5 @@
-// import { createStore } from "vuex";
-import { createStore } from "./hvuex.js"
+import { createStore } from "vuex";
+// import { createStore } from "./hvuex.js"
 
 const store = createStore({
   state () {
@@ -7,10 +7,22 @@ const store = createStore({
       count: 666
     }
   },
+  getters: {
+    double (state) {
+      return state.count * 2
+    }
+  },
   mutations: {
     add (state) {
       console.log('mutaions-add:', state)
       state.count++
+    }
+  },
+  actions: {
+    asyncAdd ({commit}) {
+      setTimeout(() => {
+        commit('add')
+      }, 1000)
     }
   }
 })
