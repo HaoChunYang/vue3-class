@@ -1,24 +1,26 @@
 <template>
-  <h1>Home</h1>
-  <TodoList />
-  <Todos />
-  <rate
-    :value="score"
-    theme="yellow"
-    @update-rate="update"
-  >评分：</rate>
-  <rate>
-    <img
-      src="/favicon.ico"
-      width="16"
-    >
-  </rate>
-  <rate-2 v-model="score">v-model版：</rate-2>
-  <button @click="buttonClick">查看model值</button>
-  <transition-box></transition-box>
-  <show-title></show-title>
+  <div>
+    <h1>Home</h1>
+    <TodoList />
+    <Todos />
+    <rate
+      :value="score"
+      theme="yellow"
+      @update-rate="update"
+    >评分：</rate>
+    <rate>
+      <img
+        src="/favicon.ico"
+        width="16"
+      >
+    </rate>
+    <rate-2 v-model="score">v-model版：</rate-2>
+    <button @click="buttonClick">查看model值</button>
+    <transition-box></transition-box>
+    <show-title></show-title>
 
-  <count></count>
+    <count></count>
+  </div>
 </template>
 
 <script setup>
